@@ -1,0 +1,81 @@
+components:
+  securitySchemes:
+    bearerAuth:
+      type: 'http'
+      scheme: 'bearer'
+      bearerFormat: 'JWT'
+  schemas:
+    Error:
+      type: object
+      properties:
+        code:
+          type: number
+        type:
+          type: string
+        message:
+          type: string
+    UserResponse:
+      properties:
+        id:
+          type: string
+          example: '61eb3961-8a49-4e7a-90e2-f7eeaf1f7204'
+        name:
+          type: string
+          example: 'John Doe'
+        email:
+          type: string
+          example: 'john@doe.com'
+    AuthenticatedResponse:
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        email:
+          type: string
+        token:
+          type: string
+        refreshToken:
+          type: string
+      type: object
+      properties:
+        total:
+          type: number
+          description: The total number of in the database
+        count:
+          type: number
+          description: The total number of that matched your filter
+
+    AvailableResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          enum: [available, unavailable]
+          example: available
+    RefreshTokenResponse:
+      type: object
+      properties:
+        token:
+          type: string
+        refreshToken:
+          type: string
+  responses:
+    NotFound:
+      description: Resource not found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Unauthorized:
+      description: Authentication required
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    BadRequest:
+      description: Request contains errors and cannot be processed
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
