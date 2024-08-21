@@ -1,7 +1,7 @@
 {
-  "name": "mustafa-backend",
-  "version": "1.4.1",
-  "description": "mustafa-backend",
+  "name": "mustafa-elgaml-backend",
+  "version": "1.3.0",
+  "description": "mustafa-elgaml-backend",
   "main": "index.js",
   "private": false,
   "scripts": {
