@@ -1,6 +1,6 @@
 {
   "name": "mustafa-backend",
-  "version": "1.2.0",
+  "version": "1.4.0",
   "description": "mustafa-backend",
   "main": "index.js",
   "private": false,
@@ -19,7 +19,7 @@
   "author": "mustafa-elgaml",
   "type": "module",
   "publishConfig": {
-    "access": "public",
+    "access": "public"
   },
   "engines": {
     "node": ">=14.15"
