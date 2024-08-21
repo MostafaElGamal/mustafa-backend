@@ -20,8 +20,6 @@ Swagger is available on http://localhost:3000/api-docs
 
 You can use Postman or swagger to test the endpoints
 
-# Graphql
-A GraphQl server is available on the url http://localhost:3000/graphql
 
 # Errors
 
