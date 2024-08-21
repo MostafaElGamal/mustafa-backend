@@ -4,10 +4,6 @@ import { knownErrors, sendHttpError, ServerError, extractTokenFromHeader } from 
 export function auth() {
   return $(async (req, res, next) => {
 
-    const useAuth = req.container.resolve('useAuth');
-    if (!useAuth) {
-      return next();
-    }
     const token = extractTokenFromHeader(req);
     if (!token) {
       return sendHttpError(res, knownErrors.missingCredentials());
